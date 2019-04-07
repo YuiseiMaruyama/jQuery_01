@@ -1,4 +1,4 @@
-<!-- #04 もっとセレクタを使ってみよう -->
+<!-- #05 フィルタを使ってみよう -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -30,20 +30,24 @@
     <script>
     // $(document).ready(function(){
     $(function(){
-        //セレクタ：$('')
-        // # .
-        // . 直下の子要素
-        // , それ以下の要素
-        // + 隣接する要素
+        //セレクタ：$("")
+        //フィルタは　: で表記
+        // :eq()
+        // :gt(),lt()
+        // :even  :odd
+        // :contains()
+        // :first, :last
 
-        //mainの中のitem要素を指定
-        // $('#main  .item').css('color','red');
+        // 配列番号2番の要素指定
+        // $('#sub > li:eq(2)').css('color','red');
 
-        // pとitemを指定
-        // $('p , .item').css('color','red');
+        //配列番号1番以上を指定
+        // $('#sub > li:gt(1)').css('color','red');
 
-        // itemの隣のitem要素を指定
-        $('.item + .item').css('color','red');
+        //奇数番目を指定
+        // $('#sub > li:odd').css('color','red');
+
+        $("#sub > li:contains('4')").css('color','red');
 
 
     });
