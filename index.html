@@ -1,4 +1,4 @@
-<!-- #05 フィルタを使ってみよう -->
+<!-- #06 メソッドを使ったDOM要素指定 -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -31,23 +31,13 @@
     // $(document).ready(function(){
     $(function(){
         //セレクタ：$("")
-        //フィルタは　: で表記
-        // :eq()
-        // :gt(),lt()
-        // :even  :odd
-        // :contains()
-        // :first, :last
-
-        // 配列番号2番の要素指定
-        // $('#sub > li:eq(2)').css('color','red');
-
-        //配列番号1番以上を指定
-        // $('#sub > li:gt(1)').css('color','red');
-
-        //奇数番目を指定
-        // $('#sub > li:odd').css('color','red');
-
-        $("#sub > li:contains('4')").css('color','red');
+        //メソッドを使ったDOM要素の指定
+        // parent(), children()
+        // next(), prev()
+        // siblings() - 兄弟要素
+        // $("#sub").children().css('color','red');
+        // $("#sub > li:eq(2)").prev().css('color','red');
+        $("#sub > li:eq(2)").siblings().css('color','red');
 
 
     });
