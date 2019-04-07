@@ -1,16 +1,11 @@
-<!-- #08 css､addClass/removeClassを使おう -->
+<!-- #09 attr､dataを使ってみよう -->
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8">
     <title>jQueryの練習</title>
-    <style>
-        .mystyle{
-            border: 5px solid green;
-            font-size: 48px;
-        }
-    </style>
+    <a href="http://google.com" data-sitename="google">google</a>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     
@@ -23,15 +18,12 @@
     // $(document).ready(function(){
     $(function(){
         //セレクタ：$("")
-        // .css
-        $('p').css('background','blue').css('color','red');
+        // attr HTMLの属性の値を取得や変更する
+        console.log($('a').attr('href'));
+        // $('a').attr('href','google.co.jp');
 
-        //要素の取得
-        console.log($('p').css('color'));
-
-        //addClass removeClass
-        $('p').addClass('mystyle');
-
+        // data
+        console.log($('a').data('sitename'));
 
     });
     </script>
