@@ -1,4 +1,4 @@
-<!-- #09 attr､dataを使ってみよう -->
+<!-- #10 タグの中身を操作してみよう -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>jQueryの練習</title>
     <a href="http://google.com" data-sitename="google">google</a>
+    <input type="text" value="hello">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     
@@ -15,15 +16,24 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
-    // $(document).ready(function(){
     $(function(){
-        //セレクタ：$("")
-        // attr HTMLの属性の値を取得や変更する
-        console.log($('a').attr('href'));
-        // $('a').attr('href','google.co.jp');
+        // text
+        // html
+        // val
+        // remove empty
 
-        // data
-        console.log($('a').data('sitename'));
+        // $('p').text('just change');
+
+        //<p> を<a href="">click me!</a>に変更する
+        $('p').html('<a href="">click me!</a>');
+
+        //textの取得
+        // console.log($('p').text());
+
+        // console.log($('input').val());
+        // $('input').val('hello again');
+
+        $('p').remove();
 
     });
     </script>
