@@ -1,3 +1,5 @@
+<!-- #04 もっとセレクタを使ってみよう -->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -29,11 +31,20 @@
     // $(document).ready(function(){
     $(function(){
         //セレクタ：$('')
-        //html p h1 ul
-        //id #main
-        //class .item
-        // $('#sub').css('color','red');
-        $('.item').css('color','red');
+        // # .
+        // . 直下の子要素
+        // , それ以下の要素
+        // + 隣接する要素
+
+        //mainの中のitem要素を指定
+        // $('#main  .item').css('color','red');
+
+        // pとitemを指定
+        // $('p , .item').css('color','red');
+
+        // itemの隣のitem要素を指定
+        $('.item + .item').css('color','red');
+
 
     });
     </script>
