@@ -1,36 +1,36 @@
-<!-- #07 属性セレクタを使ってみよう -->
+<!-- #08 css､addClass/removeClassを使おう -->
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8">
     <title>jQueryの練習</title>
+    <style>
+        .mystyle{
+            border: 5px solid green;
+            font-size: 48px;
+        }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     
 </head>
 <body>
     <p>jQueryの練習</p>
-    <p><a href="http://google.com">Google</a></p>
-    <p><a href="http://yahoo.co.jp">Yahoo!</a></p>
-    <p><a href="http://dotinstall.com">Doyinstall</a></p>
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     // $(document).ready(function(){
     $(function(){
         //セレクタ：$("")
-        //属性セレクタ
-        // =
-        // !=  等しくない
-        // *=  含む
-        // ^=  先頭が等しい
-        // $=  終わりが等しい
-        // $('a[href="http://google.com"]').css('background','red');
-        // $('a[href!="http://google.com"]').css('background','red');
-        // $('a[href*="dotinstall"]').css('background','red');
-        $('a[href$="jp"]').css('background','red');
+        // .css
+        $('p').css('background','blue').css('color','red');
+
+        //要素の取得
+        console.log($('p').css('color'));
+
+        //addClass removeClass
+        $('p').addClass('mystyle');
 
 
     });
