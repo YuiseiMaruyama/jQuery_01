@@ -1,4 +1,4 @@
-<!-- #06 メソッドを使ったDOM要素指定 -->
+<!-- #07 属性セレクタを使ってみよう -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -11,33 +11,26 @@
 </head>
 <body>
     <p>jQueryの練習</p>
-    <ul id="main">
-        <li>0</li>
-        <li class="item">1</li>
-        <li class="item">2</li>
-        <li>
-            3
-            <ul id="sub">
-                <li>3-0</li>
-                <li>3-1</li>
-                <li class="item">3-2</li>
-                <li class="item">3-3</li>
-                <li>3-4</li>
-            </ul>
-        </li>
-    </ul>
+    <p><a href="http://google.com">Google</a></p>
+    <p><a href="http://yahoo.co.jp">Yahoo!</a></p>
+    <p><a href="http://dotinstall.com">Doyinstall</a></p>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     // $(document).ready(function(){
     $(function(){
         //セレクタ：$("")
-        //メソッドを使ったDOM要素の指定
-        // parent(), children()
-        // next(), prev()
-        // siblings() - 兄弟要素
-        // $("#sub").children().css('color','red');
-        // $("#sub > li:eq(2)").prev().css('color','red');
-        $("#sub > li:eq(2)").siblings().css('color','red');
+        //属性セレクタ
+        // =
+        // !=  等しくない
+        // *=  含む
+        // ^=  先頭が等しい
+        // $=  終わりが等しい
+        // $('a[href="http://google.com"]').css('background','red');
+        // $('a[href!="http://google.com"]').css('background','red');
+        // $('a[href*="dotinstall"]').css('background','red');
+        $('a[href$="jp"]').css('background','red');
 
 
     });
