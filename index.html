@@ -26,16 +26,17 @@
        //JavaScriptを使用し、サーバーと通信 + ページを書き換える
        //非同期：処理が終わる前に次の処理に移る
 
-        //$.post
-        //$.get
+        //$.post -> データを更新
+        //$.get  -> データを取得
 
         $('#greet').click(function(){
             $.get('greet.php',{
                 name: $('#name').val()
+                //greet.phpの結果をdataとして引数に入れてresultの中に入れる
             },function(data){
-                $('#result').html(data);
+                $('#result').html(data.message + '(' + data.length + ')');
             });
-        })
+        });
 
 
     });
