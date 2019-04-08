@@ -1,41 +1,41 @@
-<!--  #12 エフェクトを使ってみよう -->
+<!--  #14 focus､blur､changeを使おう -->
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8">
     <title>jQueryの練習</title>
-    <a href="http://google.com" data-sitename="google">google</a>
-    <input type="text" value="hello">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     
 </head>
 <body>
     <p>jQueryの練習</p>
-    <div id="box" style="width: 100px;height: 100px;background: red;"></div>
+    <input type="text" id="name">
+    <select name="members" id="members">
+        <option>taguchi</option>
+        <option>fkoji</option>
+        <option>dotinstall</option>
+    </select>
+    
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     $(function(){
-        //click
-        //mouseover, mouseout, mousemove
-        $('#box').click(function(){
-            alert("hi");
-        });
+       //focus, blur
+       //change
 
-        $('#box')
-        //mouseが重なった時に発火
-        .mouseover(function(){
-            $(this).css('background','green');
-        })
-        //mouseが離れた時に発火
-        .mouseout(function(){
+       //textboxにfocusした時に発火
+       $('#name')
+       .focus(function(){
             $(this).css('background','red');
         })
-        //mouseのX座標を表示
-        .mousemove(function(e){
-            $(this).text(e.pageX);
+       //textboxにfocusが外れた時に発火
+       .blur(function(){
+            $(this).css('background','white');
+        });
+        $('#members').change(function(){
+            alert('changed');
         });
     });
     </script>
