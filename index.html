@@ -1,4 +1,4 @@
-<!-- #10 タグの中身を操作してみよう -->
+<!--  #11 要素を追加してみよう -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -13,28 +13,28 @@
 </head>
 <body>
     <p>jQueryの練習</p>
+    <ul>
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+    </ul>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     $(function(){
-        // text
-        // html
-        // val
-        // remove empty
+        //before , after -> insertBefore, insertAfter
+        //prepend, append　-> 子要素の先頭に追加、末尾に追加　appendTo
 
-        // $('p').text('just change');
+        let li = $('<li>').text('just added');
+        // $('ul > li:eq(1)').before(li);
+        // li.insertBefore($('ul > li:eq(1)'));
 
-        //<p> を<a href="">click me!</a>に変更する
-        $('p').html('<a href="">click me!</a>');
+        //'just added'を先頭に追加
+        // $('ul').prepend(li);
 
-        //textの取得
-        // console.log($('p').text());
-
-        // console.log($('input').val());
-        // $('input').val('hello again');
-
-        $('p').remove();
-
+        //末尾に追加
+        // $('ul').append(li);
+        li.appendTo('ul');
     });
     </script>
 </body>
