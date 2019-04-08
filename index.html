@@ -1,4 +1,4 @@
-<!--  #16 Ajaxとはなにか？ -->
+<!--  #17 loadメソッドを使ってみよう -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -12,7 +12,8 @@
 <body>
     <p>jQueryの練習</p>
     
-    
+    <button>もっと読む</button>
+    <div id="result"></div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
@@ -22,7 +23,12 @@
        //JavaScriptを使用し、サーバーと通信 + ページを書き換える
        //JavaScriptでページの一部を書き換えてユーザーの体感速度をあげる
 
-       
+        //load()で外部htmlから読み込む
+       $('button').click(function(){
+        $('#result').load('more.html');
+       });
+
+
     });
     </script>
 </body>
