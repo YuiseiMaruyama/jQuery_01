@@ -18,20 +18,25 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     $(function(){
-        //hide, show
-        //fadeOut, fadeIn
-        //toggle
-
-        // $('#box').hide(800);
-        // $('#box').fadeOut(800);
-        // $('#box').toggle(800);
-        // $('#box').toggle(800);
-        // $('#box').toggle(800);
-        // $('#box').toggle(800);
-        $('#box').fadeOut(800, function(){
-            alert("gone");
+        //click
+        //mouseover, mouseout, mousemove
+        $('#box').click(function(){
+            alert("hi");
         });
 
+        $('#box')
+        //mouseが重なった時に発火
+        .mouseover(function(){
+            $(this).css('background','green');
+        })
+        //mouseが離れた時に発火
+        .mouseout(function(){
+            $(this).css('background','red');
+        })
+        //mouseのX座標を表示
+        .mousemove(function(e){
+            $(this).text(e.pageX);
+        });
     });
     </script>
 </body>
