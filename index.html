@@ -1,4 +1,4 @@
-<!--  #14 focus､blur､changeを使おう -->
+<!--  #15 onメソッドを使ってみよう -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -11,32 +11,25 @@
 </head>
 <body>
     <p>jQueryの練習</p>
-    <input type="text" id="name">
-    <select name="members" id="members">
-        <option>taguchi</option>
-        <option>fkoji</option>
-        <option>dotinstall</option>
-    </select>
+    <button>Add!</button>
     
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     $(function(){
-       //focus, blur
-       //change
+       $('button').click(function(){
+        let p = $('<p>').text('vanish').addClass('vanish');
+        $(this).before(p);
+       });
 
-       //textboxにfocusした時に発火
-       $('#name')
-       .focus(function(){
-            $(this).css('background','red');
-        })
-       //textboxにfocusが外れた時に発火
-       .blur(function(){
-            $(this).css('background','white');
-        });
-        $('#members').change(function(){
-            alert('changed');
-        });
+       //documentが読み込まれた時点ではvanishクラスは存在しないため、動作しない
+    //    $('.vanish').click(function(){
+    //     $(this).remove();
+    //    });
+
+    $('body').on('click','.vanish',function(){
+        $(this).remove();
+       });
     });
     </script>
 </body>
