@@ -1,4 +1,4 @@
-<!--  #17 loadメソッドを使ってみよう -->
+<!--  #18 非同期通信とはなにか？ -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -21,11 +21,19 @@
        //Ajaxとは
        //Asynchronous JavaScript + XML
        //JavaScriptを使用し、サーバーと通信 + ページを書き換える
-       //JavaScriptでページの一部を書き換えてユーザーの体感速度をあげる
+       //非同期：処理が終わる前に次の処理に移る
 
         //load()で外部htmlから読み込む
        $('button').click(function(){
-        $('#result').load('more.html');
+        //load() -> サーバー -> 
+        //結果が返ってくる前に処理を実行してしまうため正しく動作しない
+        // $('#result').load('more.html');
+        // $('#message').css('color','red');
+
+        //第2引数にコールバック関数を与える
+        $('#result').load('more.html',function(){
+            $('#message').css('color','red');
+        });
        });
 
 
