@@ -1,4 +1,4 @@
-<!--  #15 onメソッドを使ってみよう -->
+<!--  #16 Ajaxとはなにか？ -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -11,25 +11,18 @@
 </head>
 <body>
     <p>jQueryの練習</p>
-    <button>Add!</button>
+    
     
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     $(function(){
-       $('button').click(function(){
-        let p = $('<p>').text('vanish').addClass('vanish');
-        $(this).before(p);
-       });
+       //Ajaxとは
+       //Asynchronous JavaScript + XML
+       //JavaScriptを使用し、サーバーと通信 + ページを書き換える
+       //JavaScriptでページの一部を書き換えてユーザーの体感速度をあげる
 
-       //documentが読み込まれた時点ではvanishクラスは存在しないため、動作しない
-    //    $('.vanish').click(function(){
-    //     $(this).remove();
-    //    });
-
-    $('body').on('click','.vanish',function(){
-        $(this).remove();
-       });
+       
     });
     </script>
 </body>
